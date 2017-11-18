@@ -21,3 +21,6 @@ $container['logger'] = function ($c) {
 $container['ProfileController'] = function($c) {
     return new App\Controllers\ProfileController;
 };
+
+$dotenv = new \Dotenv\Dotenv('./');
+$dotenv->load();

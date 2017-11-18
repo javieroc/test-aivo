@@ -5,4 +5,4 @@ use Slim\Http\Response;
 
 // Routes
 
-$app->get('/', \ProfileController::class . ':index');
+$app->get('/profile/facebook/[{user}]', \ProfileController::class . ':index');
