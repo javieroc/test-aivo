@@ -6,6 +6,10 @@ class ProfileController
 {
     public function index($request, $response, $args)
     {
-        return 'Hello world';
+        $dotenv = new \Dotenv\Dotenv('./');
+        $dotenv->load();
+        $app_id = getenv('FACEBOOK_APP_ID');
+        $app_secret = getenv('FACEBOOK_APP_SECRET');
+        return $app_id;
     }
 }
