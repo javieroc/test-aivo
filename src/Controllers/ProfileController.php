@@ -7,6 +7,11 @@ use GuzzleHttp\Exception\RequestException;
 
 class ProfileController
 {
+    /**
+     * Return a facebook user profile.
+     *
+     * @return Psr7 Response
+     */
     public function index($request, $response, $args)
     {
         $access_token = getenv('FACEBOOK_ACCESS_TOKEN');
