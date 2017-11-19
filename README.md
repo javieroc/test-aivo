@@ -1,26 +1,40 @@
-# Slim Framework 3 Skeleton Application
+# Test Aivo
 
-Use this skeleton application to quickly setup and start working on a new Slim Framework 3 application. This application uses the latest Slim 3 with the PHP-View template renderer. It also uses the Monolog logger.
+Simple endpoint to get a facebook user profile by id.
 
-This skeleton application was built for Composer. This makes setting up a new Slim Framework application quick and easy.
+## Prerequisites
+
+- You should have installed `composer` in your host.
+- Create and configurate a facebook application to get the access token.
 
 ## Install the Application
 
-Run this command from the directory in which you want to install your new Slim Framework application.
+Clone the repo
 
-    php composer.phar create-project slim/slim-skeleton [my-app-name]
+```
+git clone git@github.com:javieroc/test-aivo.git
+```
 
-Replace `[my-app-name]` with the desired directory name for your new application. You'll want to:
+Install dependencies
 
-* Point your virtual host document root to your new application's `public/` directory.
-* Ensure `logs/` is web writeable.
+```
+composer install
+```
 
-To run the application in development, you can also run this command. 
+Create `.env` file based on `.env.example` file and put there the facebook keys.
 
-	php composer.phar start
+## Usage
 
-Run this command to run the test suite
+Start the server
 
-	php composer.phar test
+```
+composer start
+```
 
-That's it! Now go build something cool.
+Run tests
+
+```
+composer test
+```
+
+That's it!
