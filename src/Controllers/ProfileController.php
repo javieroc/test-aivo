@@ -30,10 +30,8 @@ class ProfileController
 
             return $response->withStatus(200)->withJson($obj);
         } catch (RequestException $e) {
-            echo Psr7\str($e->getRequest());
-            if ($e->hasResponse()) {
-                echo Psr7\str($e->getResponse());
-            }
+            $obj = ['message' => 'Bad request, user id not exist.'];
+            return $response->withStatus(400)->withJson($obj);
         }
     }
 }
