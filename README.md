@@ -37,4 +37,7 @@ Run tests
 composer test
 ```
 
+You can test the endpoint `http://localhost:8080/profile/facebook/{user-id}` now
+
+
 That's it!
