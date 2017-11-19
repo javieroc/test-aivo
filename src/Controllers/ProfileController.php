@@ -16,12 +16,28 @@ class ProfileController
     {
         $access_token = getenv('FACEBOOK_ACCESS_TOKEN');
         $user = $args['user'] ? $args['user'] : '123456';
+        $fields = [
+            'id',
+            'first_name',
+            'last_name',
+            'name',
+            'email',
+            'gender',
+            'about',
+            'address',
+            'age_range',
+            'cover',
+            'education',
+            'hometown',
+            'sports',
+            'languages',
+        ];
 
         $client = new \GuzzleHttp\Client();
         try {
             $body = $client->request('GET', 'https://graph.facebook.com/v2.11/' . $user, [
                 'query' => [
-                    'fields' => 'id,first_name,last_name',
+                    'fields' => implode(',', $fields),
                     'access_token' => $access_token,
                 ]
             ])->getBody();
